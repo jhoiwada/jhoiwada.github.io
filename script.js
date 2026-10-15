@@ -5,10 +5,81 @@
  * ====================================================================
  */
 
-// --- 1. DATA PROYEK (ALL 6 AUTHENTIC PROJECTS) ---
+// --- 1. DATA PROYEK (AUTHENTIC PRODUCTION & ENGINEERING PROJECTS) ---
 const projectsData = [
   {
     id: 1,
+    title: "Genfaith Youth - Sistem Informasi & Website Organisasi Pemuda Gereja",
+    category: "fullstack",
+    image: "asset/images/genfaith_hero.png",
+    description:
+      "Sistem informasi terintegrasi dan website publik organisasi kepemudaan. Menggabungkan portal publik interaktif dengan dashboard internal berbasis peran (RBAC) untuk 6 divisi pelayanan pemuda.",
+    liveDemo: "https://genfaith-youth.vercel.app/",
+    githubLink: "https://github.com/jhoiwada/genfaith-youth",
+    screenshots: [
+      "asset/images/genfaith_hero.png",
+      "asset/images/genfaith_jadwal.png",
+      "asset/images/genfaith_tentang.png",
+      "asset/images/genfaith_login.png"
+    ],
+    background:
+      "Genfaith Youth adalah organisasi pemuda gereja dengan beberapa divisi: Kominfo, Tim Ibadah, Minat & Bakat, Wirausaha, Sekretaris, dan Bendahara. Sebelumnya, alur koordinasi antar divisi masih manual. Jadwal ibadah dibuat dalam format PDF statis, pencatatan keuangan memakai file Excel terpisah, absensi serta data anggota dikelola sendiri-sendiri, dan pengingat deadline hanya disampaikan lewat grup WhatsApp. Akibatnya alur kerja pengurus tidak efisien dan informasi sering terlambat sampai ke divisi lain.",
+    solution:
+      "Merancang dan membangun solusi website terintegrasi dua sisi: (1) Website publik yang dinamis dan modern (beranda, profil kegiatan, agenda ibadah, galeri dokumentasi retreat/Natal/ibadah padang, halaman pengurus, dan pengumuman), dan (2) Dashboard internal per divisi dengan hak akses berbasis peran (Role-Based Access Control). Seluruh modul terhubung pada single source of truth database PostgreSQL (Supabase), sehingga perubahan jadwal atau penugasan dari satu divisi otomatis tersinkronisasi ke seluruh divisi lain secara instan.",
+    divisions: [
+      {
+        name: "Tim Ibadah",
+        role: "Menyusun jadwal ibadah bulanan (tanggal, tema, kegiatan, penanggung jawab), mengarsipkan arsip jadwal ibadah lampau, dan membagikan jadwal mingguan siap cetak/ekspor PDF ke grup pengurus."
+      },
+      {
+        name: "Minat & Bakat",
+        role: "Mengelola penugasan petugas ibadah (Worship Leader, Singer, Pemusik, MC, Usher, dan Tim Multimedia) yang terhubung langsung secara real-time dengan jadwal Tim Ibadah."
+      },
+      {
+        name: "Kominfo",
+        role: "Memantau rincian jadwal per minggu sebagai acuan desain, mengunggah materi visual flyer/poster/story Instagram, serta mengelola arsip dan galeri dokumentasi publik."
+      },
+      {
+        name: "Sekretaris",
+        role: "Sentralisasi basis data anggota pemuda, presensi absensi digital setiap ibadah, rekapitulasi kehadiran berkala (mingguan/bulanan/tahunan), pengajuan dana & reimbursement, serta pembuatan pengumuman di beranda."
+      },
+      {
+        name: "Bendahara",
+        role: "Pencatatan kas iuran dan persembahan mingguan sesuai standarisasi format keuangan organisasi, kalkulasi kas masuk/keluar, dan ekspor laporan keuangan terverifikasi format PDF."
+      },
+      {
+        name: "Ketua & Koordinator",
+        role: "Dasbor monitoring eksekutif untuk memantau kehadiran jemaat, perkembangan aktivitas pelayanan, dan efektivitas koordinasi lintas seluruh divisi dalam satu pandangan utuh."
+      }
+    ],
+    myRole:
+      "Solo Full-Stack Developer & UI/UX Designer: Bertanggung jawab penuh secara mandiri mulai dari analisis kebutuhan bersama pengurus, perancangan skema arsitektur basis data relasional & aturan keamanan Row Level Security (RLS), rekayasa frontend dan backend (Next.js & Supabase), implementasi styling modern dengan dark & light mode (Tailwind CSS & shadcn/ui), hingga deployment produksi di Vercel.",
+    results:
+      "Pengurus organisasi kini memiliki satu sistem terpusat untuk menjadwalkan ibadah, merekap kehadiran jemaat secara akurat, mencatat arus kas keuangan secara transparan, mengelola materi publikasi, dan membagikan informasi. Friksi koordinasi manual dan komunikasi bolak-balik antar divisi berkurang secara drastis.",
+    features: [
+      "Website Publik: Beranda Interaktif, Agenda Sabtu, Profil Visi, Galeri Retreat & Ibadah Padang, Pengumuman",
+      "Dashboard Internal Berbasis Peran (RBAC) untuk 6 Divisi Pengurus Pelayanan",
+      "Sistem Penjadwalan Ibadah Terpusat dengan Fitur Ekspor PDF Jadwal Mingguan",
+      "Manajemen Petugas Ibadah (WL, Singer, Pemusik, MC, Usher, Multimedia) Terintegrasi",
+      "Presensi & Absensi Digital Pemuda dengan Rekapitulasi Mingguan/Bulanan/Tahunan",
+      "Pencatatan Kas & Persembahan Ibadah dengan Laporan Transaksi Format PDF",
+      "Alur Pengajuan Dana Reimbursement & Transparansi Anggaran Divisi",
+      "Arsitektur Keamanan Data dengan Supabase Auth & Row Level Security (RLS)",
+      "Desain Antarmuka Modern & Aksesibel dengan Mode Gelap / Terang (shadcn/ui)"
+    ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Vercel",
+      "Row Level Security"
+    ]
+  },
+  {
+    id: 2,
     title: "MagangLink - Platform Rekomendasi Magang Berbasis AI",
     category: "fullstack",
     image: "asset/images/maganglink.png",
@@ -29,7 +100,7 @@ const projectsData = [
     technologies: ["Python", "Machine Learning", "PHP", "MySQL", "Scikit-Learn", "Sastrawi"]
   },
   {
-    id: 2,
+    id: 3,
     title: "SPARRING - Platform Matchmaking Olahraga",
     category: "fullstack",
     image: "asset/images/sparing.png",
@@ -51,7 +122,7 @@ const projectsData = [
     technologies: ["PHP", "MySQL", "JavaScript", "Responsive UI", "Tailwind CSS"]
   },
   {
-    id: 3,
+    id: 4,
     title: "Cimohot - E-Commerce Makanan & Admin Dashboard",
     category: "fullstack",
     image: "asset/images/1.png",
@@ -75,7 +146,7 @@ const projectsData = [
     technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Prototype Sistem KCM Wisma Asri (Bioskop)",
     category: "uiux",
     image: "asset/images/14.png",
@@ -102,7 +173,7 @@ const projectsData = [
     technologies: ["Marvel App", "Figma", "UI/UX Design", "Wireframing", "User Research"]
   },
   {
-    id: 5,
+    id: 6,
     title: "AnneCoffee - Toko Kopi Japanese Minimalist",
     category: "frontend",
     image: "asset/images/6.png",
@@ -125,7 +196,7 @@ const projectsData = [
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "GitHub Pages"]
   },
   {
-    id: 6,
+    id: 7,
     title: "Velio Mobili - Company Profile & Katalog Furnitur",
     category: "frontend",
     image: "asset/images/velio.jpg",
@@ -146,10 +217,34 @@ const projectsData = [
   }
 ];
 
-// --- 2. DATA SERTIFIKAT (10 OFFICIAL GUNADARMA CERTIFICATES) ---
+// --- 2. DATA SERTIFIKAT (12 OFFICIAL VERIFIED CERTIFICATES) ---
 const certificatesData = [
   {
     id: 1,
+    title: "Belajar Penerapan Data Science dengan Microsoft Fabric",
+    category: "data-ai",
+    issuer: "Dicoding Indonesia & Microsoft",
+    date: "25 September 2026",
+    credId: "2VX3V68LQPYQ",
+    image: "asset/images/certificates/cert_dicoding_fabric.png",
+    pdf: "asset/images/certificates/cert_dicoding_fabric.pdf",
+    verifyLink: "https://dicoding.com/certificates/2VX3V68LQPYQ",
+    badge: "Data Science"
+  },
+  {
+    id: 2,
+    title: "Spec-Driven Development dengan Kiro",
+    category: "programming",
+    issuer: "Dicoding Indonesia & AWS",
+    date: "28 September 2026",
+    credId: "72ZDMYYOQZYW",
+    image: "asset/images/certificates/cert_dicoding_kiro.png",
+    pdf: "asset/images/certificates/cert_dicoding_kiro.pdf",
+    verifyLink: "https://dicoding.com/certificates/72ZDMYYOQZYW",
+    badge: "Spec-Driven Dev"
+  },
+  {
+    id: 3,
     title: "Dasar Bahasa Pemrograman JavaScript",
     category: "programming",
     issuer: "Universitas Gunadarma",
@@ -160,7 +255,7 @@ const certificatesData = [
     badge: "Programming"
   },
   {
-    id: 2,
+    id: 4,
     title: "Membuat Business Intelligence",
     category: "data-ai",
     issuer: "Universitas Gunadarma",
@@ -171,7 +266,7 @@ const certificatesData = [
     badge: "Data & AI"
   },
   {
-    id: 3,
+    id: 5,
     title: "Dasar Sistem Manajemen Basis Data (DBMS)",
     category: "database",
     issuer: "Universitas Gunadarma",
@@ -182,7 +277,7 @@ const certificatesData = [
     badge: "Database"
   },
   {
-    id: 4,
+    id: 6,
     title: "Persiapan Data Untuk Proses Bisnis",
     category: "data-ai",
     issuer: "Universitas Gunadarma",
@@ -193,7 +288,7 @@ const certificatesData = [
     badge: "Data Analysis"
   },
   {
-    id: 5,
+    id: 7,
     title: "Oracle Untuk Tingkat Pemula",
     category: "database",
     issuer: "Universitas Gunadarma",
@@ -204,7 +299,7 @@ const certificatesData = [
     badge: "Database"
   },
   {
-    id: 6,
+    id: 8,
     title: "Oracle Untuk Tingkat Menengah",
     category: "database",
     issuer: "Universitas Gunadarma",
@@ -215,7 +310,7 @@ const certificatesData = [
     badge: "Database"
   },
   {
-    id: 7,
+    id: 9,
     title: "Dasar Pemrograman Jaringan (Networking)",
     category: "network",
     issuer: "Universitas Gunadarma",
@@ -226,7 +321,7 @@ const certificatesData = [
     badge: "Networking"
   },
   {
-    id: 8,
+    id: 10,
     title: "LAN Menggunakan Cisco Router",
     category: "network",
     issuer: "Universitas Gunadarma",
@@ -237,7 +332,7 @@ const certificatesData = [
     badge: "Cisco LAN"
   },
   {
-    id: 9,
+    id: 11,
     title: "WAN Menggunakan Cisco Router (Menengah)",
     category: "network",
     issuer: "Universitas Gunadarma",
@@ -248,7 +343,7 @@ const certificatesData = [
     badge: "Cisco WAN"
   },
   {
-    id: 10,
+    id: 12,
     title: "Sertifikat Aptitude Test (Penalaran Logika)",
     category: "competency",
     issuer: "Fakultas Psikologi Universitas Gunadarma",
@@ -481,8 +576,10 @@ document.addEventListener("DOMContentLoaded", () => {
       card.setAttribute("data-aos", "fade-up");
       card.setAttribute("data-aos-delay", (index % 3) * 100);
 
+      const hasVerify = c.verifyLink && c.verifyLink !== "";
+
       card.innerHTML = `
-        <div class="cert-preview-box" onclick="openLightbox('${c.image}', '${c.title}', '${c.pdf}')">
+        <div class="cert-preview-box" onclick="openLightbox('${c.image}', '${c.title}', '${c.pdf}', '${c.verifyLink || ''}')">
           <img src="${c.image}" alt="${c.title}" class="cert-preview-img" loading="lazy" />
           <span class="cert-category-badge">${c.badge}</span>
           <div class="cert-preview-overlay">
@@ -497,12 +594,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="cert-id">${c.credId}</span>
           </div>
           <div class="cert-actions">
-            <button onclick="openLightbox('${c.image}', '${c.title}', '${c.pdf}')" class="btn-cert-preview">
+            <button onclick="openLightbox('${c.image}', '${c.title}', '${c.pdf}', '${c.verifyLink || ''}')" class="btn-cert-preview">
               <i data-lucide="eye"></i> Pratinjau
             </button>
             <a href="${c.pdf}" target="_blank" rel="noopener" class="btn-cert-pdf">
               <i data-lucide="file-text"></i> PDF Asli
             </a>
+            ${hasVerify ? `
+            <a href="${c.verifyLink}" target="_blank" rel="noopener" class="btn-cert-verify" title="Verifikasi Online Kredensial Resmi">
+              <i data-lucide="shield-check"></i> Verifikasi
+            </a>` : ""}
           </div>
         </div>
       `;
@@ -599,11 +700,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- 4. GLOBAL FUNCTIONS (LIGHTBOX & PROJECT DETAILS) ---
-window.openLightbox = function (imgSrc, title, pdfSrc) {
+window.openLightbox = function (imgSrc, title, pdfSrc, verifyLink = "") {
   const modal = document.getElementById("lightbox-modal");
   const img = document.getElementById("lightbox-img");
   const titleEl = document.getElementById("lightbox-title");
   const pdfBtn = document.getElementById("lightbox-pdf-btn");
+  let verifyBtn = document.getElementById("lightbox-verify-btn");
 
   if (!modal || !img || !titleEl) return;
 
@@ -617,6 +719,28 @@ window.openLightbox = function (imgSrc, title, pdfSrc) {
       pdfBtn.href = pdfSrc;
     } else {
       pdfBtn.style.display = "none";
+    }
+  }
+
+  const footer = modal.querySelector(".lightbox-footer");
+  if (!verifyBtn && footer) {
+    verifyBtn = document.createElement("a");
+    verifyBtn.id = "lightbox-verify-btn";
+    verifyBtn.target = "_blank";
+    verifyBtn.rel = "noopener";
+    verifyBtn.className = "btn-cert-verify";
+    verifyBtn.style.fontSize = "0.88rem";
+    verifyBtn.style.padding = "8px 20px";
+    verifyBtn.innerHTML = `<i data-lucide="shield-check"></i> Verifikasi Kredensial`;
+    footer.insertBefore(verifyBtn, footer.children[1] || null);
+  }
+
+  if (verifyBtn) {
+    if (verifyLink) {
+      verifyBtn.style.display = "inline-flex";
+      verifyBtn.href = verifyLink;
+    } else {
+      verifyBtn.style.display = "none";
     }
   }
 

@@ -96,6 +96,86 @@
             </div>
           </div>
         </div>
+
+        <!-- ================= CASE STUDY & SYSTEM ARCHITECTURE ================= -->
+        <div id="case-study-container" class="case-study-container" style="display: none;">
+          <!-- Section Divider -->
+          <div class="case-study-divider">
+            <span>Studi Kasus Lengkap & Arsitektur Sistem</span>
+          </div>
+
+          <div class="case-study-grid">
+            <!-- Problem & Background Card -->
+            <div class="cs-card cs-problem">
+              <div class="cs-card-header">
+                <div class="cs-icon-badge red">
+                  <i data-lucide="alert-circle"></i>
+                </div>
+                <div>
+                  <h3>Latar Belakang & Masalah</h3>
+                  <span class="cs-card-sub">Tantangan Koordinasi Konvensional</span>
+                </div>
+              </div>
+              <p id="cs-background" class="cs-text"></p>
+            </div>
+
+            <!-- Solution & Architecture Card -->
+            <div class="cs-card cs-solution">
+              <div class="cs-card-header">
+                <div class="cs-icon-badge cyan">
+                  <i data-lucide="layers"></i>
+                </div>
+                <div>
+                  <h3>Solusi Terintegrasi Dua Sisi</h3>
+                  <span class="cs-card-sub">Portal Publik & Dashboard Internal</span>
+                </div>
+              </div>
+              <p id="cs-solution" class="cs-text"></p>
+            </div>
+          </div>
+
+          <!-- Multi-Divisi Workflow Grid -->
+          <div id="cs-divisions-wrap" class="cs-divisions-wrap" style="display: none;">
+            <h3 class="cs-subheading">
+              <i data-lucide="users" style="color: var(--cyan-400)"></i>
+              Hak Akses & Alur Kerja 6 Divisi Pengurus (RBAC)
+            </h3>
+            <div id="cs-divisions-grid" class="cs-divisions-grid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Role & Impact Section -->
+          <div class="case-study-grid" style="margin-top: 24px;">
+            <!-- My Role Card -->
+            <div class="cs-card cs-role">
+              <div class="cs-card-header">
+                <div class="cs-icon-badge emerald">
+                  <i data-lucide="user-check"></i>
+                </div>
+                <div>
+                  <h3>Peran & Tanggung Jawab Saya</h3>
+                  <span class="cs-card-sub">Solo Full-Stack Developer & UI/UX</span>
+                </div>
+              </div>
+              <p id="cs-role" class="cs-text"></p>
+            </div>
+
+            <!-- Impact & Results Card -->
+            <div class="cs-card cs-results">
+              <div class="cs-card-header">
+                <div class="cs-icon-badge gold">
+                  <i data-lucide="trending-up"></i>
+                </div>
+                <div>
+                  <h3>Dampak & Hasil Akhir</h3>
+                  <span class="cs-card-sub">Efisiensi Alur Kerja & Sentralisasi</span>
+                </div>
+              </div>
+              <p id="cs-results" class="cs-text"></p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -182,6 +262,38 @@
             li.textContent = feat;
             featureList.appendChild(li);
           });
+        }
+
+        // 7. Case Study (If Available)
+        const caseStudyContainer = document.getElementById("case-study-container");
+        if (projectData.background) {
+          caseStudyContainer.style.display = "block";
+          document.getElementById("cs-background").textContent = projectData.background;
+          document.getElementById("cs-solution").textContent = projectData.solution || "";
+
+          // Divisions
+          const divisionsWrap = document.getElementById("cs-divisions-wrap");
+          const divisionsGrid = document.getElementById("cs-divisions-grid");
+          if (projectData.divisions && projectData.divisions.length > 0) {
+            divisionsWrap.style.display = "block";
+            divisionsGrid.innerHTML = "";
+            projectData.divisions.forEach((div) => {
+              const divCard = document.createElement("div");
+              divCard.className = "cs-div-card";
+              divCard.innerHTML = `
+                <div class="cs-div-title">
+                  <i data-lucide="check-circle-2"></i> ${div.name}
+                </div>
+                <p class="cs-div-desc">${div.role}</p>
+              `;
+              divisionsGrid.appendChild(divCard);
+            });
+          }
+
+          document.getElementById("cs-role").textContent = projectData.myRole || "";
+          document.getElementById("cs-results").textContent = projectData.results || "";
+        } else {
+          caseStudyContainer.style.display = "none";
         }
 
         // Render Icons
